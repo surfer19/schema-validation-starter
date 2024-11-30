@@ -1,0 +1,18 @@
+{
+  "name": "schema",
+  "version": "1.0.0",
+  "description": "OpenAPI Schema generation boilerplate",
+  "author": "Marian Mrva",
+  "license": "MIT",
+  "dependencies": {
+    "openapi-zod-client": "~1.18.1",
+    "swagger2openapi": "~7.0.8",
+    "zod": "~3.23.8"
+  },
+  "scripts": {
+    "schema:generate": "npm run schema:fetch && npm run schema:zod",
+    "schema:fetch": "curl http://127.0.0.1:8000/openapi.json > openapi.json",
+    "schema:zod": "npx openapi-zod-client openapi.json --output zod-schema.ts -t template.hbs --strict-objects",
+    "schema:swagger2openapi": "swagger2openapi swagger.json -o openapi.json"
+  }
+}

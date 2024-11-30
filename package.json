@@ -1,0 +1,34 @@
+{
+  "name": "dog-breeds-app",
+  "version": "1.0.0",
+  "description": "Dog Breeds Application with Python Backend and React Frontend",
+  "scripts": {
+    "install:all": "npm install && cd client && npm install && cd ../api && python3 -m venv venv && pip install -r requirements.txt",
+    "postinstall": "cd api && . venv/bin/activate || .\\venv\\Scripts\\activate",
+    "dev:client": "cd client && npm run dev",
+    "dev:api": "cd api && . venv/bin/activate || .\\venv\\Scripts\\activate && uvicorn main:app --reload",
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:client\"",
+    "build:client": "cd client && npm run build",
+    "lint:client": "cd client && npm run lint",
+    "test:client": "cd client && npm run test",
+    "clean": "rimraf client/dist api/__pycache__ **/*.pyc",
+    "generate-schemas": "cd schema && npm run schema:generate"
+  },
+  "keywords": [
+    "react",
+    "python",
+    "fastapi",
+    "dogs"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "rimraf": "^5.0.1",
+    "vitest": "^2.1.4"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

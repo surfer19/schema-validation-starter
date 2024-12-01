@@ -16,7 +16,10 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.1.5",
-    "@tanstack/react-query": "^5.59.19",
+    "@tanstack/react-query": "^4.29.19",
+    "@trpc/client": "^10.45.2",
+    "@trpc/react-query": "^10.45.2",
+    "@trpc/server": "^10.45.2",
     "@vitejs/plugin-react-swc": "^3.7.1",
     "axios": "^1.7.7",
     "clsx": "^2.1.1",

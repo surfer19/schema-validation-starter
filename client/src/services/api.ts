@@ -1,14 +1,15 @@
-import axios from "axios";
-import { schemas } from "@schema/zod-schema";
-import type { DogBreedsResponse } from "@/types/api";
+import { trpcClient } from "./trpc";
+import type { RouterOutputs } from "@api/types/router";
 
-const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://localhost:8000",
-});
+export type DogBreedsResponse = RouterOutputs["v1"]["breeds"]["getBreeds"];
 
 export const dogApi = {
   getBreeds: async (): Promise<DogBreedsResponse> => {
-    const { data } = await api.get("/v1/breeds");
-    return schemas.DogBreedsResponse.parse(data);
+    try {
+      return await trpcClient.v1.breeds.getBreeds.query();
+    } catch (error) {
+      console.error("Failed to fetch dog breeds:", error);
+      throw error;
+    }
   },
 };

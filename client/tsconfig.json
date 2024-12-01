@@ -31,7 +31,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@schema/*": ["../schema/*"],
-      "@services/*": ["src/services/*"]
+      "@services/*": ["src/services/*"],
+      "@api/*": ["../api/src/*"]
     }
   },
   "include": ["src", "../schema"],

@@ -1,12 +1,11 @@
 ## Dog Breeds Application 🐕
 
-A full-stack application showcasing dog breeds using React (Frontend) and Python/FastAPI (Backend).
+A full-stack application showcasing dog breeds using React (Frontend) NodeJS (Backend) with tRPC.
 
 ### Prerequisites
 
 - Node.js >= `18.0.0`
 - npm >= `9.0.0`
-- Python `3.x`
 
 ### Installation
 
@@ -48,36 +47,8 @@ npm run dev:client
 npm run dev:api
 ```
 
-### Project Structure
-
-```
-├── api
-│   ├── __init__.py
-│   ├── dependencies.py
-│   ├── main.py
-│   ├── models.py
-│   └── requiremens.txt
-├── client
-│   ├── public
-│   ├── src
-│   │   ├── assets
-│   │   ├── components
-│   │   │   └── ui
-│   │   ├── features
-│   │   │   └── dogs
-│   │   │       ├── components
-│   │   │       └── pages
-│   │   ├── lib
-│   │   ├── services
-│   │   └── types
-├── package.json
-└── schema
-    ├── openapi.json
-    ├── template.hbs
-    └── zod-schema.ts
-```
-
 ### Available Scripts
+
 - npm run install:all - Install all dependencies (frontend & backend)
 - npm run dev - Run both frontend and backend in development mode
 - npm run dev:client - Run frontend only
@@ -87,3 +58,8 @@ npm run dev:api
 - npm run test:client - Run frontend tests
 - npm run clean - Clean up generated files and directories
 
+### Example API call
+
+```
+GET http://localhost:8000/trpc/v1.breeds.getBreeds
+```

@@ -63,3 +63,5 @@ next-env.d.ts
 # Vitest
 coverage/
 .coverage
+
+# Git configuration
